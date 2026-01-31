@@ -23,7 +23,7 @@
 - DNS is managed by NetworkManager
 - IPv4 DNS server: 192.168.100.1 (router)
 
-## Notes
+
 - DHCP provided by router
 
 
