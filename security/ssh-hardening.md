@@ -1,4 +1,4 @@
-# SSH Hardening in Prod node
+# SSH Hardening in Prod node (Raspberry PI)
 
 - Disabled password authentication
 - Enforced Key-based only SSH
