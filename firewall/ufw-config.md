@@ -5,4 +5,4 @@
 - This is a host-based firewall, the host in our case is the prod node (Raspberry Pi)
 - The firewall is currently up and running, by running command `sudo ufw status verbose`, I can check the status of the firewall
 
-![UFW](../images/screenshot-20260202-190225.png)
+- <img src="../images/screenshot-20260202-190225.png" alt="UFW Firewall Config" width="500" />
