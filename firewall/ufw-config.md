@@ -6,3 +6,4 @@
 - The firewall is currently up and running, by running command `sudo ufw status verbose`, I can check the status of the firewall
 
 ![ufw](./images/screenshot-20260202-190225.png)
+
