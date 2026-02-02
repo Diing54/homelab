@@ -22,8 +22,6 @@
 ## Raspberry Pi (Production node)
 - Hostname: prod
 - IP address: 192.168.100.56 - static
-- 
-
 
 ## DNS Configuration (Current State)
 - Command ---> `nmcli dev show | grep DNS`
