@@ -25,11 +25,10 @@
 
 ## DNS Configuration (Current State)
 - Command ---> `nmcli dev show | grep DNS`
-- DNS is managed by NetworkManager
-- IPv4 DNS server: 192.168.100.1 (router)
+- DNS for this entire network is managed by an internal DNS server (dnsmasq) running on prod node (Raspberry PI) 
+- IPv4 DNS server: 192.168.100.56 (Raspberry PI)
 
-
-- DHCP provided by router - Currently, I have not explicitly set up static IP addresses and for some reason they are not changing even after I reboot the devices.
+- DHCP provided by router - Currently, I have not explicitly set up static IP addresses on both the admin and client nodes and for some reason they are not changing even after I reboot the devices. I found out modern routers often assign sticky IP addresses, when a device or the router reboots, it assigns the same IP address based on the device's MAC address. 
 
 ## Notes
 - Some routers like mine do not usually assign new IP addresses everytime a device reboots, but they are also not static forever. However, a static IP has been assigned to the Raspberry PI (prod node) using the router reservation settings.
