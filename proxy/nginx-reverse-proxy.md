@@ -70,6 +70,52 @@ A symbolic link was created in sites-enabled directory.
 
 ## Introducing a Simple Backend Service
 
+To demonstrate reverse proxying, a simple backend service is introduced, this is a lightweight Python HTTP server started locally in the prod node (Raspberry PI) listening on `127.0.0.1:8080`
+
+```bash
+astro@prod:~/apps/hello$ cat hello.py 
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+        self.wfile.write(b"Hello from backend service\n")
+
+HTTPServer(("127.0.0.1", 8080), Handler).serve_forever()
+
+astro@prod:~/apps/hello$ 
+```
+
+- The backend binds only to localhost
+- It is not exposed to LAN
+- Only NGINX can access it
+
+## Reverse Proxy Configuration for the above
+
+A new location block is added to the `prod.homelab` server block:
+
+```nginx
+location /hello/ {
+    proxy_pass http://127.0.0.1:8080/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+```
+
+This instructs NGINX to:
+- Accept requests to `/hello/`
+- Open a new internal connection to the backend
+- Forward the request and return the response
+
+To summarize reverse proxying, Nginx accepts an external request, rewrites its destination, opens a new internal connection, and hello.py responds.
+
+
+
+
+
 
 
 
