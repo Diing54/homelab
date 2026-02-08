@@ -151,7 +151,12 @@ Updating the trust store;
 ```bash
 sudo trust extract-compat
 ```
+
+One last step is to configure the ufw firewall on the raspberry PI to allow HTTPS traffic from port  443 using the command `sudo ufw allow 443/tcp`
+
 With the above steps, I was happy HTTPS was fully implemented in my homelab !!
+
+
 
 To read more about how HTTPS and CA's work, check it out below in my Kasten;
 

@@ -5,7 +5,7 @@
 - This is a host-based firewall, the host in our case is the prod node (Raspberry Pi)
 - The firewall is currently up and running, by running command `sudo ufw status verbose`, I can check the status of the firewall
 
-<img src="../images/screenshot-20260204-160330.png" alt="UFW Firewall Config" width="600" />
+<img src="../images/screenshot-20260208-191522.png" alt="UFW Firewall Config" width="600" />
 
 - Default:deny(incoming) ---> This means that any traffic that doesn't match a rule will be blocked
 - Default:allow(outgoing) ---> Any outgoing traffic from the prod is allowed
@@ -15,9 +15,11 @@
 | **22/tcp** | ALLOW IN | Anywhere | Any device can attempt to connect to SSH on port 22. |
 | **53** | ALLOW IN | Anywhere | Allows incoming DNS traffic (standard for name resolution services). |
 | **80/tcp** | ALLOW IN | Anywhere | Allows incoming HTTP traffic for the Nginx reverse proxy. |
+| **443/tcp** | ALLOW IN | Anywhere | Allows incoming HTTPS traffic (encrypted web traffic). |
 | **22/tcp (v6)** | ALLOW IN | Anywhere (v6) | Same as SSH port 22, but for IPv6 addresses. |
 | **53 (v6)** | ALLOW IN | Anywhere (v6) | Same as DNS port 53, but for IPv6 addresses. |
 | **80/tcp (v6)** | ALLOW IN | Anywhere (v6) | Same as HTTP port 80, but for IPv6 addresses. |
+| **443/tcp (v6)** | ALLOW IN | Anywhere (v6) | Same as HTTPS port 443, but for IPv6 addresses. |
 
 
 - I could explicitly set to only allow ssh traffic from Laptop A (admin) using IP filtering by using the command `ufw allow from <IP> to any port 22`, this is a strong security feature but I could lock myself out of prod because of DHCP IP change from the admin device.
