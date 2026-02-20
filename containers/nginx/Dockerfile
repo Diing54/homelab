@@ -1,7 +1,6 @@
 FROM nginx:1.28-alpine
 
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY conf/prod.homelab /etc/nginx/conf.d/prod.homelab
+COPY conf/prod.homelab.conf /etc/nginx/conf.d/
 
 EXPOSE 80 443
 
