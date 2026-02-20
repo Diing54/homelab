@@ -1,0 +1,35 @@
+# Redirect all HTTP traffic to HTTPS
+server {
+    listen 80;
+    server_name prod.homelab;
+    return 301 https://$host$request_uri;
+}
+
+# HTTPS server
+server {
+    listen 443 ssl;
+    server_name prod.homelab;
+
+    ssl_certificate     /etc/nginx/pki/prod.homelab.crt;
+    ssl_certificate_key /etc/nginx/pki/prod.homelab.key;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+
+    root /var/www/prod;
+    index index.html;
+
+    access_log /var/log/nginx/prod.access.log;
+    error_log  /var/log/nginx/prod.error.log;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /hello/ {
+        proxy_pass http://backend:8080/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
