@@ -1,0 +1,14 @@
+- My Apps:
+    - Blog:
+        href: https://cloudiing.com
+        description: My Blog
+        icon: hugo
+        server: my-docker # This tells Homepage to look for the container stats
+        container: hugo_blog # Must match your blog's container_name
+        
+    - Bookmarks:
+        href: https://bookmarks.cloudiing.com
+        description: Linkding Bookmark Manager
+        icon: linkding
+        server: my-docker
+        container: linkding
