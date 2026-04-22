@@ -5,13 +5,19 @@ services:
     image: ghcr.io/diing54/blog:latest
     container_name: hugo_blog
     restart: unless-stopped
-    # The Pi does not need port bindings; Cloudflare handles the routing internally.
+    networks:
+      - homelab_net
 
   cloudflared:
     image: cloudflare/cloudflared:latest
     container_name: cloudflare_tunnel
     restart: unless-stopped
-    # The token is securely injected at runtime from the .env file
     command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
     depends_on:
       - blog
+    networks:
+      - homelab_net
+
+networks:
+  homelab_net:
+    external: true
