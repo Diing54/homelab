@@ -1,20 +1,8 @@
-version: '3.8'
-
 services:
   blog:
     image: ghcr.io/diing54/blog:sha-f8994e1
     container_name: hugo_blog
     restart: unless-stopped
-    networks:
-      - homelab_net
-
-  cloudflared:
-    image: cloudflare/cloudflared:latest
-    container_name: cloudflare_tunnel
-    restart: unless-stopped
-    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
-    depends_on:
-      - blog
     networks:
       - homelab_net
 
