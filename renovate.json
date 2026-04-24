@@ -5,7 +5,6 @@
     ":pinDigests"
   ],
   "labels": ["dependencies"],
-  "timezone": "Africa/Nairobi",
   "docker-compose": {
     "fileMatch": ["(^|/)docker-compose\\.ya?ml$"]
   }
