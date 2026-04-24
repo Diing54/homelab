@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   blog:
-    image: ghcr.io/diing54/blog:latest
+    image: ghcr.io/diing54/blog:sha-f8994e1
     container_name: hugo_blog
     restart: unless-stopped
     networks:
