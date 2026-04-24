@@ -2,10 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    ":pinDigests"
+    "docker:pinDigests"
   ],
   "labels": ["dependencies"],
-  "docker-compose": {
-    "fileMatch": ["(^|/)docker-compose\\.ya?ml$"]
-  }
+  "timezone": "Africa/Nairobi"
 }
