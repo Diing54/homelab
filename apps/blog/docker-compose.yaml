@@ -1,6 +1,6 @@
 services:
   blog:
-    image: ghcr.io/diing54/blog:sha-f8994e1@sha256:b7a1fe2610172fd7c67ac7082a9e3756c3ee03e608cf9cb66b7e975445e3aa39
+    image: ghcr.io/diing54/blog:latest
     container_name: hugo_blog
     restart: unless-stopped
     networks:
