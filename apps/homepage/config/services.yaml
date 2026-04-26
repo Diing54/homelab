@@ -3,8 +3,8 @@
         href: https://cloudiing.com
         description: My Blog
         icon: hugo
-        server: my-docker # This tells Homepage to look for the container stats
-        container: hugo_blog # Must match your blog's container_name
+        server: my-docker 
+        container: hugo_blog 
         
     - Bookmarks:
         href: https://bookmarks.cloudiing.com
@@ -12,3 +12,10 @@
         icon: linkding
         server: my-docker
         container: linkding
+
+    - DevLog:
+        href: https://devlog.cloudiing.com
+        description: Personal Activity Tracker
+        icon: mdi-clipboard-text-clock-outline
+        server: my-docker
+        container: devlog_nginx
