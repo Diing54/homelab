@@ -7,7 +7,7 @@
         container: hugo_blog 
         
     - Bookmarks:
-        href: https://bookmarks.cloudiing.com
+        href: https://linkding.cloudiing.com
         description: Linkding Bookmark Manager
         icon: linkding
         server: my-docker
