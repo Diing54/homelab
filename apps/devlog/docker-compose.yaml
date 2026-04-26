@@ -1,7 +1,7 @@
 services:
   # ── Nginx: public entry point ──────────────────────────────────
   devlog_nginx:
-    image: nginx:1.25-alpine
+    image: nginx:1.25-alpine@sha256:516475cc129da42866742567714ddc681e5eed7b9ee0b9e9c015e464b4221a00
     container_name: devlog_nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
@@ -15,7 +15,7 @@ services:
 
   # ── Frontend: React SPA served by nginx ────────────────────────
   frontend:
-    image: ghcr.io/diing54/devlog/frontend:latest
+    image: ghcr.io/diing54/devlog/frontend:latest@sha256:ccdf6a543f976440a3dc51c370f70bf45b91a051e734c10b36f35067e46138ff
     container_name: devlog_frontend
     restart: unless-stopped
     networks:
@@ -23,7 +23,7 @@ services:
 
   # ── Backend: Node.js REST API ───────────────────────────────────
   backend:
-    image: ghcr.io/diing54/devlog/backend:latest
+    image: ghcr.io/diing54/devlog/backend:latest@sha256:7ea5f5ad5fa3c4d57aea1c14a1adfad966dc936e04402579108bb4724c2ca131
     container_name: devlog_backend
     env_file: .env
     environment:
@@ -39,7 +39,7 @@ services:
 
   # ── PostgreSQL: persistent storage ─────────────────────────────
   postgres:
-    image: postgres:16-alpine
+    image: postgres:16-alpine@sha256:4e6e670bb069649261c9c18031f0aded7bb249a5b6664ddec29c013a89310d50
     container_name: devlog_postgres
     env_file: .env
     environment:
@@ -60,7 +60,7 @@ services:
 
   # ── Redis: caching layer ────────────────────────────────────────
   redis:
-    image: redis:7-alpine
+    image: redis:7-alpine@sha256:7aec734b2bb298a1d769fd8729f13b8514a41bf90fcdd1f38ec52267fbaa8ee6
     container_name: devlog_redis
     command: redis-server --save 60 1 --loglevel warning
     volumes:
