@@ -5,5 +5,13 @@
     "docker:pinDigests"
   ],
   "labels": ["dependencies"],
-  "timezone": "Africa/Nairobi"
+  "timezone": "Africa/Nairobi",
+  "hostRules": [
+    {
+      "matchHost": "ghcr.io",
+      "hostType": "docker",
+      "username": "Diing54",
+      "password": "{{ secrets.devops }}"
+    }
+  ]
 }
