@@ -15,7 +15,7 @@ services:
 
   # ── Frontend: React SPA served by nginx ────────────────────────
   frontend:
-    image: ghcr.io/diing54/devlog/frontend:latest@sha256:830e9eed6a5de571e6b5f03997ebc57456c96c6e52cad8db203fefec7db65503
+    image: ghcr.io/diing54/devlog/frontend:latest@sha256:c681a734cff0c8025d880acf051b8e6710ece558dd0ab74301bcd13ea0d260db
     container_name: devlog_frontend
     restart: unless-stopped
     networks:
