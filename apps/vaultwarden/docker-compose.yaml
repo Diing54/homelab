@@ -9,7 +9,7 @@ services:
       # DOMAIN is required for some features like U2F/WebAuthn
       - DOMAIN=https://vaultwarden.cloudiing.com
     volumes:
-      - ./vw-data:/data
+      - ./data:/data
     networks:
       - homelab_net
 
