@@ -3,9 +3,9 @@
         href: https://cloudiing.com
         description: My Blog
         icon: hugo
-        server: my-docker 
-        container: hugo_blog 
-        
+        server: my-docker
+        container: hugo_blog
+
     - Bookmarks:
         href: https://linkding.cloudiing.com
         description: Linkding Bookmark Manager
@@ -19,3 +19,10 @@
         icon: mdi-clipboard-text-clock-outline
         server: my-docker
         container: devlog_nginx
+
+    - DevOps Notes:
+        href: https://devops.cloudiing.com
+        description: Personal DevOps Knowledge Base
+        icon: mdi-book-open-page-variant-outline
+        server: my-docker
+        container: devops

@@ -1,0 +1,16 @@
+/* Tighten up card padding for a denser, more minimal look */
+#page > div {
+  padding-top: 1.5rem;
+}
+
+/* Slightly bolder service names */
+.service-name {
+  font-weight: 600;
+}
+
+/* Subtle separator between widget rows */
+.widget-container {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
