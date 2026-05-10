@@ -1,7 +1,23 @@
 ---
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/settings/
+title: Diing's Homelab
+favicon: https://cloudiing.com/favicon.ico
+
+theme: dark
+color: slate
+headerStyle: clean
+target: _blank
+cardBlur: sm
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: false
+  showSearchSuggestions: true
+
+layout:
+  My Apps:
+    style: row
+    columns: 4
+    header: true
 
 providers:
-  openweathermap: openweathermapapikey
-  weatherapi: weatherapiapikey
+  openweathermap: 0daa9cf3be9d0c9909647c1910e9e6e5
