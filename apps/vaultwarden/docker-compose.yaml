@@ -1,0 +1,18 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    environment:
+      - WEBSOCKET_ENABLED=true # Enables live-syncing across your devices
+      - SIGNUPS_ALLOWED=false
+      # DOMAIN is required for some features like U2F/WebAuthn
+      - DOMAIN=https://vaultwarden.cloudiing.com
+    volumes:
+      - ./vw-data:/data
+    networks:
+      - homelab_net
+
+networks:
+  homelab_net:
+    external: true
