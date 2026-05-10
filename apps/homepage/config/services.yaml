@@ -26,3 +26,11 @@
         icon: mdi-book-open-page-variant-outline
         server: my-docker
         container: devops
+
+    - Vaultwarden:
+        icon: bitwarden
+        href: https://vaultwarden.cloudiing.com
+        description: Password Manager
+        server: my-docker
+        container: vaultwarden
+        ping: https://vaultwarden.cloudiing.com
