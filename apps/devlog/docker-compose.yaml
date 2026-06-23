@@ -23,7 +23,7 @@ services:
 
   # ── Backend: Node.js REST API ───────────────────────────────────
   backend:
-    image: ghcr.io/diing54/devlog/backend:latest@sha256:510e93aa13d500fb9019243076adae1a17d19d86015575510e2ff29d63d877d5
+    image: ghcr.io/diing54/devlog/backend:latest@sha256:776f632b64d370a797870866a3cc3ebeb9ef0904934395b58e2cddba13239705
     container_name: devlog_backend
     env_file: .env
     environment:
