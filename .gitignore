@@ -1,9 +1,23 @@
-.env
+# keep secrets out of git
+**/.env
 *.key
 *.pem
 secrets/
-*/data/
-data/
-apps/homepage/config/logs/
+
+# ignore local app state and databases
+**/data/
+*.sqlite3
+*.sqlite3-*
+*.db
+
+# keep disaster recovery payloads local
 backups/
+
+# logs and caching
+**/logs/
 *.log
+tmp/
+
+# editor temp files (vim, nano)
+*~
+*.swp
