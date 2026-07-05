@@ -21,3 +21,9 @@ tmp/
 # editor temp files (vim, nano)
 *~
 *.swp
+
+# paperless-ngx specific directories
+**/media/
+**/consume/
+**/export/
+**/pgdata/
