@@ -1,13 +1,13 @@
 services:
   broker:
-    image: docker.io/library/redis:7
+    image: docker.io/library/redis:7@sha256:b2b95679e3b46fb51864949ed25ea976fc3a6bcc00a40a1bc00d568cb2822e50
     container_name: paperless-redis
     restart: unless-stopped
     volumes:
       - redisdata:/data
 
   db:
-    image: docker.io/library/postgres:15
+    image: docker.io/library/postgres:15@sha256:3b0d656f5fff31c7d8a64f500a703dcf3f35e98ce78f602831a73059a5e6a012
     container_name: paperless-db
     restart: unless-stopped
     volumes:
@@ -18,7 +18,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
   webserver:
-    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest@sha256:6c86cad803970ea782683a8e80e7403444c5bf3cf70de63b4d3c8e87500db92f
     container_name: paperless-webserver
     restart: unless-stopped
     depends_on:
