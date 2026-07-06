@@ -34,3 +34,13 @@
         server: my-docker
         container: vaultwarden
         ping: https://vaultwarden.cloudiing.com
+
+   - Paperless-ngx:
+        href: https://paperless.cloudiing.com
+        description: Document Management System
+        icon: paperless-ngx
+        server: my-docker
+        container: paperless-webserver
+        widget:
+          type: paperlessngx
+          url: http://paperless-webserver:8000
