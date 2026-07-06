@@ -3,6 +3,8 @@ services:
     image: docker.io/library/redis:8@sha256:2838d5524559494f6f1cd66e97e76b200d64a633a8614200620755ed395daf32
     container_name: paperless-redis
     restart: unless-stopped
+    networks:
+      - paperless-internal
     volumes:
       - redisdata:/data
 
@@ -10,6 +12,8 @@ services:
     image: docker.io/library/postgres:18@sha256:4aabea78cf39b90e834caf3af7d602a18565f6fe2508705c8d01aa63245c2e20
     container_name: paperless-db
     restart: unless-stopped
+    networks:
+      - paperless-internal
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     environment:
@@ -26,6 +30,9 @@ services:
       - broker
     ports:
       - "8000:8000"
+    networks:
+      - paperless-internal
+      - homelab_net
     volumes:
       - ./data:/usr/src/paperless/data
       - ./media:/usr/src/paperless/media
@@ -46,3 +53,8 @@ services:
 
 volumes:
   redisdata:
+
+networks:
+  paperless-internal:
+  homelab_net:
+    external: true
