@@ -21,3 +21,5 @@ layout:
 
 providers:
   openweathermap: 0daa9cf3be9d0c9909647c1910e9e6e5
+
+showStats: true
