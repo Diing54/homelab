@@ -1,32 +1,4 @@
-- My Apps:
-    - Blog:
-        href: https://cloudiing.com
-        description: My Blog
-        icon: hugo
-        server: my-docker
-        container: hugo_blog
-
-    - Bookmarks:
-        href: https://linkding.cloudiing.com
-        description: Linkding Bookmark Manager
-        icon: linkding
-        server: my-docker
-        container: linkding
-
-    - DevLog:
-        href: https://devlog.cloudiing.com
-        description: Personal Activity Tracker
-        icon: mdi-clipboard-text-clock-outline
-        server: my-docker
-        container: devlog_nginx
-
-    - DevOps Notes:
-        href: https://devops.cloudiing.com
-        description: Personal DevOps Knowledge Base
-        icon: mdi-book-open-page-variant-outline
-        server: my-docker
-        container: devops
-
+- Infrastructure & Security:
     - Vaultwarden:
         icon: bitwarden
         href: https://vaultwarden.cloudiing.com
@@ -35,9 +7,66 @@
         container: vaultwarden
         ping: https://vaultwarden.cloudiing.com
 
+- Knowledge Base:
     - Paperless-ngx:
+        icon: paperless-ngx
         href: https://paperless.cloudiing.com
         description: Document Management System
-        icon: paperless-ngx
         server: my-docker
         container: paperless-webserver
+        widget:
+            type: paperlessngx
+            url: http://paperless-webserver:8000
+            key: "{{HOMEPAGE_VAR_PAPERLESS_TOKEN}}"
+
+    - Linkding:
+        icon: linkding
+        href: https://linkding.cloudiing.com
+        description: Personal Bookmark Manager
+        server: my-docker
+        container: linkding
+        widget:
+            type: customapi
+            url: http://linkding:9090/api/bookmarks/
+            headers:
+                Authorization: "Token {{HOMEPAGE_VAR_LINKDING_TOKEN}}"
+            mappings:
+                - field: count
+                  label: Total Bookmarks
+
+    - Reading List:
+        icon: linkding
+        href: https://linkding.cloudiing.com/bookmarks?q=!unread
+        description: Unread Queue
+        server: my-docker
+        container: linkding
+        widget:
+            type: customapi
+            url: "http://linkding:9090/api/bookmarks/?q=!unread"
+            headers:
+                Authorization: "Token {{HOMEPAGE_VAR_LINKDING_TOKEN}}"
+            mappings:
+                - field: count
+                  label: Unread
+
+    - DevOps Notes:
+        icon: mdi-book-open-page-variant-outline
+        href: https://devops.cloudiing.com
+        description: Cloud & DevOps Wiki
+        server: my-docker
+        container: devops
+
+- Web & Projects:
+    - DevLog:
+        icon: mdi-clipboard-text-clock-outline
+        href: https://devlog.cloudiing.com
+        description: Personal Activity Tracker
+        server: my-docker
+        container: devlog_nginx
+
+    - Blog:
+        icon: hugo
+        href: https://cloudiing.com
+        description: Public Tech Blog
+        server: my-docker
+        container: hugo_blog
