@@ -1,7 +1,7 @@
 ---
 - greeting:
     text_size: 2xl
-    text: "Hey Diing 👋"
+    text: "Chiman"
 
 - datetime:
     text_size: l
@@ -12,23 +12,15 @@
     locale: en-KE
 
 - resources:
-    label: Raspberry Pi
     cpu: true
     memory: true
-    disk: /
     cputemp: true
     uptime: true
     units: metric
     refresh: 3000
-    diskUnits: bytes
 
 - search:
     provider: duckduckgo
     target: _blank
     focus: true
     
-- openweathermap:
-    latitude: -1.2921
-    longitude: 36.8219
-    units: metric
-    cache: 10

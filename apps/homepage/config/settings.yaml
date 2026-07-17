@@ -1,5 +1,5 @@
 ---
-title: Diing's Homelab
+title: Command Center
 favicon: https://cloudiing.com/favicon.ico
 
 theme: dark
@@ -13,11 +13,17 @@ quicklaunch:
   hideInternetSearch: false
   showSearchSuggestions: true
 
+# This forces a clean, symmetric 3-column grid for your groups
 layout:
-  My Apps:
+  Infrastructure & Security:
     style: row
-    columns: 4
-    header: true
+    columns: 3
+  Knowledge Base:
+    style: row
+    columns: 3
+  Web & Projects:
+    style: row
+    columns: 3
 
 providers:
   openweathermap: 0daa9cf3be9d0c9909647c1910e9e6e5
