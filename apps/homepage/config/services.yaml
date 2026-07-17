@@ -1,4 +1,16 @@
 - Infrastructure & Security:
+    - Cloudflare Tunnel:
+        icon: cloudflare
+        href: https://one.dash.cloudflare.com/
+        description: Zero Trust Network Access
+        server: my-docker
+        container: cloudflare_tunnel
+        widget:
+            type: cloudflared
+            accountid: 909a74f124a0392947fb2bdba4b05835
+            tunnelid: ae63b0ee-ef92-48f6-b66d-135b488b4d5f
+            key: "{{HOMEPAGE_VAR_CLOUDFLARE_TOKEN}}"  
+
     - Vaultwarden:
         icon: bitwarden
         href: https://vaultwarden.cloudiing.com
@@ -6,6 +18,7 @@
         server: my-docker
         container: vaultwarden
         ping: https://vaultwarden.cloudiing.com
+
 
 - Knowledge Base:
     - Paperless-ngx:
