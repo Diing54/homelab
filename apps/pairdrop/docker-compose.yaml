@@ -1,6 +1,6 @@
 services:
   pairdrop:
-    image: ghcr.io/schlagmichdoch/pairdrop:latest
+    image: ghcr.io/schlagmichdoch/pairdrop:latest@sha256:c4b30977264a76e335740089e693a52a0d0d616330dec7f93c7b96beef7b4a02
     container_name: pairdrop
     restart: unless-stopped
     ports:
