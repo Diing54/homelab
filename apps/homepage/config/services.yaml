@@ -34,23 +34,8 @@
 
     - Linkding:
         icon: linkding
-        href: https://linkding.cloudiing.com
-        description: Personal Bookmark Manager
-        server: my-docker
-        container: linkding
-        widget:
-            type: customapi
-            url: http://linkding:9090/api/bookmarks/
-            headers:
-                Authorization: "Token {{HOMEPAGE_VAR_LINKDING_TOKEN}}"
-            mappings:
-                - field: count
-                  label: Total Bookmarks
-
-    - Reading List:
-        icon: linkding
         href: https://linkding.cloudiing.com/bookmarks?q=!unread
-        description: Unread Queue
+        description: Unread Bookmarks
         server: my-docker
         container: linkding
         widget:
