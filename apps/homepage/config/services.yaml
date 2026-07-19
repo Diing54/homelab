@@ -31,6 +31,13 @@
             type: paperlessngx
             url: http://paperless-webserver:8000
             key: "{{HOMEPAGE_VAR_PAPERLESS_TOKEN}}"
+    
+    - Wallabag:
+        icon: wallabag
+        href: https://wallabag.cloudiing.com
+        description: Reading Archive
+        server: my-docker
+        container: wallabag
 
     - Linkding:
         icon: linkding
