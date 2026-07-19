@@ -1,0 +1,15 @@
+services:
+  pairdrop:
+    image: ghcr.io/schlagmichdoch/pairdrop:latest
+    container_name: pairdrop
+    restart: unless-stopped
+    ports:
+      - "3004:3000"
+    environment:
+      - TZ=Africa/Nairobi
+    networks:
+      - homelab_net
+
+networks:
+  homelab_net:
+    external: true
