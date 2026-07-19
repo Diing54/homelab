@@ -1,0 +1,22 @@
+services:
+  wallabag:
+    image: wallabag/wallabag:latest
+    container_name: wallabag
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - SYMFONY__ENV__DOMAIN_NAME=${WALLABAG_URL}
+      - SYMFONY__ENV__SERVER_NAME="Diing's Reading Archive"
+      - SYMFONY__ENV__FOSUSER_REGISTRATION=false # Blocks random internet users from signing up
+    volumes:
+      - ./data:/var/www/wallabag/data
+      - ./images:/var/www/wallabag/web/assets/images
+    ports:
+      - "8080:80"
+    networks:
+      - homelab_net
+
+networks:
+  homelab_net:
+    external: true
