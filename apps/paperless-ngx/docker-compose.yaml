@@ -9,7 +9,7 @@ services:
       - redisdata:/data
 
   db:
-    image: docker.io/library/postgres:15
+    image: docker.io/library/postgres:15@sha256:74e110c41804365e3915fcc09d5e7a1eff50161aaa94d5da0e58e0cd75ae509c
     container_name: paperless-db
     restart: unless-stopped
     networks:
