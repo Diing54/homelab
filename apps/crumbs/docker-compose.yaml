@@ -1,0 +1,20 @@
+services:
+  crumbs:
+    image: ghcr.io/bretzel-app/crumbs:latest
+    container_name: crumbs
+    restart: unless-stopped
+    networks:
+      - homelab_net
+    ports:
+      - "3000:3000"
+    volumes:
+      - crumbs_data:/data
+    environment:
+      - ORIGIN=https://crumbs.cloudiing.com
+      
+volumes:
+  crumbs_data:
+
+networks:
+  homelab_net:
+    external: true
