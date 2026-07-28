@@ -38,7 +38,6 @@
         description: Short Notes
         server: my-docker 
         container: crumbs
-        ping: crumbs:3000 
 
     - Wallabag:
         icon: wallabag
