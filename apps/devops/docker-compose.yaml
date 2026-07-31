@@ -1,6 +1,6 @@
 services:
   devops:
-    image: ghcr.io/diing54/devops:latest@sha256:9ded57d61a6360f555f09144b40c4c0e9479f1bf24aea314ad83b2d109b88852
+    image: ghcr.io/diing54/devops:latest@sha256:7039cb107038d2b0d2899fa5af2d8cb10dd9ba2e197b689de94a0d34ee638439
     container_name: devops
     restart: unless-stopped
     networks:
