@@ -3,12 +3,7 @@
   "extends": [
     "config:recommended"
   ],
-  "packageRules": [
-    {
-      "matchDatasources": ["docker"],
-      "pinDigests": false
-    }
-  ],
+  "pinDigests": true,
   "labels": ["dependencies"],
   "timezone": "Africa/Nairobi",
   "hostRules": [
