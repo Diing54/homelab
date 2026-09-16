@@ -1,12 +1,14 @@
 # Homelab
-This repository contains the configuration and documentation for my personal homelab, built on Cloud Native and DevOps principles. 
+This repository contains the configuration and documentation for my personal homelab built on Cloud Native and DevOps principles. This is my safe space for testing my ideas practically without worrying about breaking real-world production environments.
 
-## Architecture & Hardware
+## Architecture
+Applications developed locally have their source code living in separate repos, each with its own CI that builds and pushes to GHCR. That makes this repository a deployment layer, it holds no application source, just the Compose files referencing images using their pinned digests. Renovate Bot watches over the registry and opens a PR the moment a new image digest is detected.
 
-The infrastructure is divided into two environments:
-
-*   **Development:** Lenovo IdeaPad 3 running Arch Linux. Used for writing code, building container images, and managing configurations.
-*   **Production:** Raspberry Pi 5 (8GB, Debian 13). Operates headlessly as the production node hosting all services.
+## Hardware
+| Node | Role | Spec |
+|---|---|---|
+| Raspberry Pi 5 | Production(Operates headlessly hosting all the services) | 8GB RAM, 256GB PCIe NVMe SSD, Debian |
+| Lenovo IdeaPad 3 | Development(Used for writing code and building container images) | 8GB RAM, 900GB HDD, Arch Linux |
 
 ## CI/CD Workflow
 
@@ -20,12 +22,19 @@ Deployments follow a GitOps-based pipeline using Renovate Bot:
 
 All services are containerized and orchestrated via Docker Compose:
 
-*   **Homepage:** Dashboard providing an overview of infrastructure and container metrics.
-*   **Paperless-ngx:** Document management system with an OCR pipeline.
-*   **Vaultwarden:** Self-hosted password and secrets manager.
-*   **Linkding:** Bookmark manager.
-*   **DevLog & DevOps Notes:** Custom applications and knowledge bases for tracking activity and documentation.
-*   **Blog:** Personal weblog served via Hugo.
+| Service | Purpose | Network |
+|---|---|---|
+| DevLog | Personal activity tracker | `devlog_internal` + `homelab_net` |
+| Paperless-ngx | Document management system | `paperless-internal` + `homelab_net` |
+| Vaultwarden | Self-hosted password manager | `homelab_net` |
+| Linkding | Bookmark manager | `homelab_net` |
+| Homepage | Infrastructure dashboard | `homelab_net` |
+| Wallabag | Read-it-later archive | `homelab_net` |
+| Crumbs | Short notes taker | `homelab_net` |
+| Pairdrop | LAN file transfer | `homelab_net` |
+| Blog | Hugo-based personal site | `homelab_net` |
+| DevOps Notes | Personal knowledge base | `homelab_net` |
+| Cloudflare Tunnel | Ingress | `homelab_net` |
 
 ## Networking & Security
 
