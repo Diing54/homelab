@@ -11,4 +11,4 @@ I migrated the primary storage layer to a 256GB Lexar PCIe NVMe SSD (M.2 2280) m
 
 ## Consequences
 * **Pros:** This completely eliminates the storage bottleneck, providing the high-frequency write endurance necessary for a distributed Kubernetes (K3s) control plane and future continuous time-series database logging.
-* **Cons:** Considering the current state of the memory chips market, the NVME block was pricey.
+* **Cons:** Considering the current market state of the storage and memory chips, the NVME was pricey.
