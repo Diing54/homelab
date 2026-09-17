@@ -2,6 +2,9 @@
 This repository contains the configuration and documentation for my personal homelab built on Cloud Native and DevOps principles. This is my safe space for testing my ideas practically without worrying about breaking real-world production environments.
 
 ## Architecture
+
+![Image](docs/assets/images/high-level-architecture1.png)
+
 Applications developed locally have their source code living in separate repos, each with its own CI that builds and pushes to GHCR. That makes this repository a deployment layer, it holds no application source, just the Compose files referencing images using their pinned digests. Renovate Bot watches over the registry and opens a PR the moment a new image digest is detected.
 
 ## Hardware
