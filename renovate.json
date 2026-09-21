@@ -5,5 +5,13 @@
   ],
   "pinDigests": true,
   "labels": ["dependencies"],
-  "timezone": "Africa/Nairobi"
+  "timezone": "Africa/Nairobi",
+  "hostRules": [
+    {
+      "matchHost": "ghcr.io",
+      "hostType": "docker",
+      "username": "diing54",
+      "password": "{{ secrets.RENOVATE_GHCR_PAT }}"
+    }
+  ]
 }
