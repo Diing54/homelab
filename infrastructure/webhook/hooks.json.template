@@ -1,8 +1,8 @@
 [
   {
     "id": "homelab-sync",
-    "execute-command": "/homelab/scripts/gitops-sync.sh",
-    "command-working-directory": "/homelab",
+    "execute-command": "/home/astro/homelab/scripts/gitops-sync.sh",
+    "command-working-directory": "/home/astro/homelab",
     "trigger-rule": {
       "and": [
         {

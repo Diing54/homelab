@@ -8,7 +8,7 @@ services:
       - "9000:9000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/astro/homelab:/homelab
+      - /home/astro/homelab:/home/astro/homelab
       - ./hooks.json.template:/etc/webhook/hooks.json.template:ro
       - /home/astro/.ssh/homelab_deploy_key:/root/.ssh/id_ed25519:ro
       # Share the host's Docker login session with the container
