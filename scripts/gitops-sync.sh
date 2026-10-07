@@ -66,4 +66,7 @@ if [ "$LOCAL_WORK_STASHED" = true ]; then
     git stash pop || echo "WARNING: Merge conflict while restoring local work. Your changes are safely stored in 'git stash list'."
 fi
 
+HOST_OWNER=$(stat -c "%u:%g" "$HOMELAB_DIR")
+chown -R $HOST_OWNER "$HOMELAB_DIR"
+
 echo "GitOps Sync completed successfully."
