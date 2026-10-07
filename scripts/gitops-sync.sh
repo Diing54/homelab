@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+exec > >(tee -a /home/astro/homelab/gitops.log) 2>&1
 HOMELAB_DIR="/home/astro/homelab"
 git config --global --add safe.directory $HOMELAB_DIR
 cd $HOMELAB_DIR
