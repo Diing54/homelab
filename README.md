@@ -15,12 +15,12 @@ Applications developed locally have their source code living in separate repos, 
 
 ## CI/CD Workflow
 
-Deployments follow a GitOps-based pipeline using Renovate Bot:
+Deployments follow a GitOps-based pipeline using Renovate Bot and a webhook:
 
 1.  Custom applications are developed on the Arch Linux machine, containerized, and pushed to a remote registry.
 2.  Renovate Bot monitors the registry and automatically creates a Pull Request in this repository when a new image tag is detected.
-3.  Once the PR is merged, changes are pulled to the Raspberry Pi via SSH, and services are updated using Docker Compose.
-
+3.  Merging the PR triggers a GitHub webhook, which is securely routed to my homelab via a Cloudflare Tunnel.
+4.  An internal webhook receiver `adnanh/webhook` intercepts the payload and cryptographically verifies the signature and triggers a local script that restarts the affected containers with the new image tags.
 ## Services Stack
 
 All services are containerized and orchestrated via Docker Compose:
@@ -38,6 +38,7 @@ All services are containerized and orchestrated via Docker Compose:
 | Blog | Hugo-based personal site | `homelab_net` |
 | DevOps Notes | Personal knowledge base | `homelab_net` |
 | Cloudflare Tunnel | Ingress | `homelab_net` |
+| Webhook Receiver | Intercepts incoming webhooks | `homelab_net` |
 
 ## Networking & Security
 
