@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.1.0] - 2026-10-12
+### Added
+- **GitOps:** Implemented a custom, event-driven CI/CD pipeline using `adnanh/webhook` to automate Docker Compose deployments.
+- **Observability:** Added real-time logging of the GitOps deployment to `gitops.log`.
+- **Dashboard:** Added the webhook container to homepage
+- **Documentation:** Authored ADR-0006 describing the webhook automation
+
+### Changed
+- **CI/CD:** Moved from manual SSH-based git pulls to automated zero-touch deployments.
 
 ## [1.0.0] - 2026-09-18
 ### Added
