@@ -11,6 +11,13 @@
             tunnelid: ae63b0ee-ef92-48f6-b66d-135b488b4d5f
             key: "{{HOMEPAGE_VAR_CLOUDFLARE_TOKEN}}"  
 
+    - GitOps Webhook:
+        icon: mdi-webhook
+        href: https://github.com/Diing54/homelab/settings/hooks
+        description: Automated CI/CD
+        server: my-docker
+        container: gitops-webhook
+
     - Vaultwarden:
         icon: bitwarden
         href: https://vaultwarden.cloudiing.com
