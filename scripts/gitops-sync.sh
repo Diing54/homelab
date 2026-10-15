@@ -67,6 +67,14 @@ if [ "$LOCAL_WORK_STASHED" = true ]; then
 fi
 
 HOST_OWNER=$(stat -c "%u:%g" "$HOMELAB_DIR")
-chown -R $HOST_OWNER "$HOMELAB_DIR"
+
+chown -R $HOST_OWNER "$HOMELAB_DIR/.git"
+
+git -C "$HOMELAB_DIR" ls-tree -r --name-only HEAD | while read file; do
+    if [ -e "$HOMELAB_DIR/$file" ]; then
+        chown $HOST_OWNER "$HOMELAB_DIR/$file"
+    fi
+done
 
 echo "GitOps Sync completed successfully."
+
