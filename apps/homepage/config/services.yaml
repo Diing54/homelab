@@ -11,6 +11,18 @@
             tunnelid: ae63b0ee-ef92-48f6-b66d-135b488b4d5f
             key: "{{HOMEPAGE_VAR_CLOUDFLARE_TOKEN}}"  
 
+    - Pi-hole:
+        icon: pi-hole
+        href: http://192.168.100.56:8053/admin
+        description: Network Ad Blocker
+        server: my-docker
+        container: pihole
+        widget:
+            type: pihole
+            url: http://pihole:80
+            version: 6
+            key: "{{HOMEPAGE_VAR_PIHOLE_TOKEN}}"
+
     - GitOps Webhook:
         icon: mdi-webhook
         href: https://github.com/Diing54/homelab/settings/hooks
