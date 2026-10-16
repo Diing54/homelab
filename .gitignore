@@ -27,3 +27,7 @@ tmp/
 **/consume/
 **/export/
 **/pgdata/
+
+# pihole specific state directories
+**/etc-pihole/
+**/etc-dnsmasq.d/
