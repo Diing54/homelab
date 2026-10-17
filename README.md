@@ -38,6 +38,7 @@ All services are containerized and orchestrated via Docker Compose:
 | Blog | Hugo-based personal site | `homelab_net` |
 | DevOps Notes | Personal knowledge base | `homelab_net` |
 | Cloudflare Tunnel | Ingress | `homelab_net` |
+| Pi-Hole | Network ad blocker | `homelab_net` |
 | Webhook Receiver | Intercepts incoming webhooks | `homelab_net` |
 
 ## Networking & Security
