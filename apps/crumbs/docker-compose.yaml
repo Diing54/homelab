@@ -1,6 +1,6 @@
 services:
   crumbs:
-    image: ghcr.io/bretzel-app/crumbs:latest@sha256:94ed0c4e284571e6db08d4972bb4034b04897368de8514bed6bde4d44ffa4a25
+    image: ghcr.io/bretzel-app/crumbs:latest@sha256:59e1fc7b202f55535f01dbd393349ca060dcfa457ac49e44b5127e6f14bed4a3
     container_name: crumbs
     restart: unless-stopped
     networks:
